@@ -2,8 +2,8 @@
 
 NAME="Unicorn"
 ## ENV=production
-## ENV=development
-ENV=staging
+## ENV=staging
+ENV=development
 
 ROOT_DIR="/home/rails/sample_stg/current"
 
