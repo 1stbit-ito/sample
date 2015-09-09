@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907105107) do
+ActiveRecord::Schema.define(version: 20150909032004) do
 
   create_table "borrowings", force: :cascade do |t|
     t.integer  "user_id"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20150907105107) do
   add_index "borrowings", ["user_id"], name: "index_borrowings_on_user_id"
 
   create_table "user2s", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user3s", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at", null: false
