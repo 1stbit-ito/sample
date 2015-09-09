@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -xe
 
 eval `ssh-agent`
 
