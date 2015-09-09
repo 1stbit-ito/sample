@@ -56,7 +56,11 @@ namespace :deploy do
     on roles(:app) do
       with rails_env: fetch(:rails_env) do
         within current_path do
-          execute :bundle, :exec, :rake, 'unicorn:restart'
+# unicorn:restart だと変更したモノが有効にならない。。。 ナゼ？？
+#          execute :bundle, :exec, :rake, 'unicorn:restart'
+
+          execute :bundle, :exec, :rake, 'unicorn:stop'
+          execute :bundle, :exec, :rake, 'unicorn:start'
         end
       end
     end
