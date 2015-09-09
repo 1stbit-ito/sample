@@ -53,7 +53,7 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.4.1"
 end
 
-group :development do
+group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
