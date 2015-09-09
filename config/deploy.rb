@@ -60,7 +60,9 @@ namespace :deploy do
 #          execute :bundle, :exec, :rake, 'unicorn:restart'
 
           execute :bundle, :exec, :rake, 'unicorn:stop'
-          execute :bundle, :exec, :rake, 'unicorn:start'
+#          execute :bundle, :exec, :rake, 'unicorn:start'
+#          execute "export SECRET_KEY_BASE=ec6efc03b53aeeb6f0df823a1e42583292d8f524264eac661e08121bbfd138a675a63b35b640c347989057ad0ffbfd21daff57532fe3fa105b00556aa3acad6f"
+          execute :bundle, :exec, :rake, 'unicorn:staging'
         end
       end
     end
