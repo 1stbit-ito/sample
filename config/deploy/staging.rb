@@ -5,8 +5,9 @@ set :branch, 'master'
 set :rails_env, 'staging'
 set :migration_role, 'db'
  
-role :app, %w{rails@172.31.24.164 rails@172.31.24.165 rails@172.31.6.15} # 実際のサーバのIPアドレスを指定します。
-role :db, %w{rails@172.31.24.164 rails@172.31.24.165 rails@172.31.6.15}
+role :app, %w{rails@172.31.24.164 rails@172.31.6.15} # 実際のサーバのIPアドレスを指定します。
+role :web, %w{rails@172.31.24.164 rails@172.31.6.15}
+role :db, %w{rails@172.31.24.164 rails@172.31.6.15}
  
 set :ssh_options, {
 keys: [File.expand_path('~/.ssh/id_rsa')],
