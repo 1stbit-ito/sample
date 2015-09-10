@@ -63,3 +63,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano3-unicorn'
 end
+
+group :development do
+  gem 'aws-sdk'
+end
