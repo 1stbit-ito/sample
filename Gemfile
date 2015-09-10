@@ -47,6 +47,8 @@ gem 'therubyracer'
 #gem 'sqlite3'
 gem 'unicorn'
 gem 'mysql2', '~> 0.3.13'
+gem 'redis'
+gem 'redis-rails'
 
 group :development, :test do
   gem 'spring-commands-rspec', '~> 1.0.1'
