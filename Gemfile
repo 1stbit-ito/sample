@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,6 +46,7 @@ end
 gem 'therubyracer'
 #gem 'sqlite3'
 gem 'unicorn'
+gem 'mysql2', '~> 0.3.13'
 
 group :development, :test do
   gem 'spring-commands-rspec', '~> 1.0.1'

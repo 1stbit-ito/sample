@@ -14,35 +14,35 @@
 ActiveRecord::Schema.define(version: 20150909032004) do
 
   create_table "borrowings", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "book_id"
+    t.integer  "user_id",    limit: 4
+    t.integer  "book_id",    limit: 4
     t.date     "due_back"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
-  add_index "borrowings", ["book_id"], name: "index_borrowings_on_book_id"
-  add_index "borrowings", ["user_id"], name: "index_borrowings_on_user_id"
+  add_index "borrowings", ["book_id"], name: "index_borrowings_on_book_id", using: :btree
+  add_index "borrowings", ["user_id"], name: "index_borrowings_on_user_id", using: :btree
 
   create_table "user2s", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "user3s", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
