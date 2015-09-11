@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:1stbit-ito/sample.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/rails/sample_stg'
+set :deploy_to, '/home/rails/sample
 # set :deploy_to, '/home/rails/sample_dev'
 
 # Default value for :scm is :git
