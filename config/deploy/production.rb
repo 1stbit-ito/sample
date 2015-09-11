@@ -1,3 +1,17 @@
+# production.rb
+set :stage, :production
+set :unicorn_rack_env, "production"
+set :branch, 'master'
+set :rails_env, 'production'
+set :migration_role, 'db'
+
+set :ssh_options, {
+keys: [File.expand_path('~/.ssh/id_rsa')],
+forward_agent: true,
+auth_methods: %w(publickey)
+}
+
+
 elasticloadbalancing = Aws::ElasticLoadBalancing::Client.new
 instance_states = elasticloadbalancing.describe_instance_health(load_balancer_name: 'LB-gameband-prod').instance_states
 
