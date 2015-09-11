@@ -1,5 +1,5 @@
 elasticloadbalancing = Aws::ElasticLoadBalancing::Client.new
-instance_states = elasticloadbalancing.describe_instance_health(load_balancer_name: 'LB-gameband-staging').instance_states
+instance_states = elasticloadbalancing.describe_instance_health(load_balancer_name: 'LB-gameband-prod').instance_states
 
 target_instance_ids = []
 instance_states.each do |instance_state|
