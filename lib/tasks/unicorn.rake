@@ -52,30 +52,36 @@ namespace :unicorn do
   end
 
   def unicorn_signal signal
-    Process.kill signal, unicorn_pid
+    if unicorn_pid.nil? then
+      print "Unicorn doesn't seem to be running!\n"
+    else
+      Process.kill signal, unicorn_pid
+    end
   end
 
   def unicorn_old_signal signal
-    Process.kill signal, unicorn_old_pid
+    if unicorn_old_pid.nil? then
+      print "unicorn.pid.oldbin is not found.\n"
+    else
+      Process.kill signal, unicorn_old_pid
+    end
   end
 
   def unicorn_pid
     begin
-#      File.read("/home/gameband/api/tmp/unicorn.pid").to_i
       current_path = Rails.root.join('')
-      File.read("#{current_path}/tmp/unicorn.pid").to_i
-    rescue Errno::ENOENT
-      raise "Unicorn doesn't seem to be running"
+      if File.exist?("#{current_path}/tmp/unicorn.pid")
+        File.read("#{current_path}/tmp/unicorn.pid").to_i
+      end
     end
   end
 
   def unicorn_old_pid
     begin
-#      File.read("/home/gameband/api/tmp/unicorn.pid.oldbin").to_i
       current_path = Rails.root.join('')
-      File.read("#{current_path}/tmp/unicorn.pid.oldbin").to_i
-    rescue Errno::ENOENT
-      raise "unicorn.pid.oldbin is not found."
+      if File.exist?("#{current_path}/tmp/unicorn.pid.oldbin")
+        File.read("#{current_path}/tmp/unicorn.pid.oldbin").to_i
+      end
     end
   end
 end
